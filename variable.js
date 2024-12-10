@@ -31,3 +31,4 @@ function textblockscope() {
     console.log(example);// this will also be printed
 }
 textblockscope();
+
