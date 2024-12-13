@@ -84,7 +84,7 @@ fetchData
 
 const fetchUser = () =>
     new Promise((resolve) => {
-        setTimeout(() => resolve({ name: "Aayush", age: 20 }), 1000);
+        setTimeout(() => resolve({ name: "mritunjay", age: 20 }), 1000);
     });
 
 const fetchPosts = (user) =>
@@ -94,7 +94,7 @@ const fetchPosts = (user) =>
 
 fetchUser()
     .then((user) => fetchPosts(user))
-    .then((posts) => console.log(posts)) // Output: ["Aayush's Post 1", "Aayush's Post 2"]
+    .then((posts) => console.log(posts)) // Output: ["mritunjay's Post 1", "mritunjay's Post 2"]
     .catch((error) => console.error(error));
 
 // async and await...>async and await are used to work with asynchronous code in a more synchronous-like manner.
