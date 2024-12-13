@@ -114,6 +114,8 @@ const getData = async () => {
 getData();
 
 
+// modules ...>Modules allow you to organize your code into reusable units.
+// module example is in file..>math.js and app.js
 
 
 
