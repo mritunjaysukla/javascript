@@ -80,6 +80,38 @@ fetchData
     .then((data) => console.log(data))
     .catch((error) => console.error(error));
 
+// chaining promises ...>Chaining promises allows you to execute multiple asynchronous operations in a sequence.
+
+const fetchUser = () =>
+    new Promise((resolve) => {
+        setTimeout(() => resolve({ name: "Aayush", age: 20 }), 1000);
+    });
+
+const fetchPosts = (user) =>
+    new Promise((resolve) => {
+        setTimeout(() => resolve([`${user.name}'s Post 1`, `${user.name}'s Post 2`]), 1000);
+    });
+
+fetchUser()
+    .then((user) => fetchPosts(user))
+    .then((posts) => console.log(posts)) // Output: ["Aayush's Post 1", "Aayush's Post 2"]
+    .catch((error) => console.error(error));
+
+// async and await...>async and await are used to work with asynchronous code in a more synchronous-like manner.
+// a promised based function
+const fetchdata = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Data loaded successfully!"), 2000);
+    }
+    );
+};
+//using async and await
+const getData = async () => {
+    console.log("Fetching data...");
+    const data = await fetchdata();  // Waits for the Promise to resolve
+    console.log(data);
+};
+getData();
 
 
 
