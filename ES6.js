@@ -5,10 +5,10 @@ if (true) {
     const y = 20;
     console.log(x);
     console.log(y);
-}
-console.log(x); // Error: x is not defined
-console.log(y); // Error: y is not defined
 
+    console.log(x); // Error: x is not defined
+    console.log(y); // Error: y is not defined
+}
 // Template Literals
 const name = "Mritunjay";
 const age = 21;
@@ -62,6 +62,23 @@ const per = new Per("Mritunjay", 21);
 console.log(per.consoleInfo());
 
 
+
+
+// promises...>A promise is an object that represents the eventual completion or failure of an asynchronous operation.
+const fetchData = new Promise((resolve, reject) => {
+    let dataloaded = true;
+    setTimeout(() => {
+        if (dataloaded) {
+            resolve("Data loaded successfully!");
+        } else {
+            reject("Error: Data not loaded.");
+        }
+    }, 2000);
+
+});
+fetchData
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
 
 
 
